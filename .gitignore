@@ -107,7 +107,3 @@ venv.bak/
 
 # Jetbrains
 .idea/
-.idea/vcs.xml
-.idea/workspace.xml
-
-
