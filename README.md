@@ -26,6 +26,27 @@ Files:
 * **requirements.txt**
     * a listing of the Python modules required for this app
 
+## Installation
+To run this app using Apache2 web server on Debina/Ubuntu Linux:
+* install Apache
+	* sudo apt install -y apache2
+	* sudo apt install apache2-utils
+* enable Apache <--> Python3 interactions via mod_wsgi
+	* sudo apt install libapache2-mod-wsgi-py3
+	* sudo apt install python3-flask
+* install Git in order to clone this repo
+	* sudo apt install git
+* clone the app somewhere
+	* mkdir /var/www/minimal
+	* sudo chown -R ubuntu /var/www/minimal
+	* cd /var/www/minimal
+	* git clone https://github.com/nicholascar/minimal-flask-mvc.git .
+* adjust this app's app.wsgi file to point to the dir you cloned it to
+	* nano app.wsgi
+* configure Apache to point to this app at /minimal
+	* sudo nano /etc/apache2/sites-available/000-default.conf
+	* add in the settings from the example apache.conf in this repo
+
 ## Contacts
 **Nicholas Car**  
 *Senior Experimental Scientist*  
