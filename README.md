@@ -41,11 +41,15 @@ To run this app using Apache2 web server on Debina/Ubuntu Linux:
 	* sudo chown -R ubuntu /var/www/minimal
 	* cd /var/www/minimal
 	* git clone https://github.com/nicholascar/minimal-flask-mvc.git .
+	* cd minimal-flask-mvc
+	* pip3 install -r requirement.txt
 * adjust this app's app.wsgi file to point to the dir you cloned it to
 	* nano app.wsgi
+	* replace '/var/www/app' to '/var/www/minimal/minimal-flask-mvc'
 * configure Apache to point to this app at /minimal
-	* sudo nano /etc/apache2/sites-available/000-default.conf
-	* add in the settings from the example apache.conf in this repo
+	* sudo mv /var/www/minimal/minimal-flask-mvc/apache.config /etc/apache2/sites-available/
+	* sudo a2ensite apache
+	* note: the user and group of WSGIDaemonProcess configuration specified in apache.conf should be an Unix/Linux user, who should have execute privileges on the WSGIscript.
 
 ## Contacts
 **Nicholas Car**  
